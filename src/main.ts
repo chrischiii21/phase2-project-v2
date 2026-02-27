@@ -22,3 +22,23 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 `
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+
+// ---------- Hide Top Bar on Scroll ----------
+const topBar = document.getElementById("topBar") as HTMLElement | null;
+let lastScrollY = window.scrollY;
+
+window.addEventListener("scroll", () => {
+  if (!topBar) return;
+
+  if (window.scrollY > lastScrollY && window.scrollY > 50) {
+    // scrolling down → hide top bar
+    topBar.style.transform = "translateY(-100%)";
+    topBar.style.opacity = "0";
+  } else {
+    // scrolling up → show top bar
+    topBar.style.transform = "translateY(0)";
+    topBar.style.opacity = "1";
+  }
+
+  lastScrollY = window.scrollY;
+});

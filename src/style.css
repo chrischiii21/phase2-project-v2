@@ -4,7 +4,7 @@
 
 @theme {
   --font-sans: 'Jost', sans-serif;
-  --font-serif: 'Times New Roman', serif;
+  --font-serif: 'Cormorant Garamond', serif;
 }
 
 @layer base {
@@ -18,7 +18,7 @@
 
   h1,
   h2 {
-    font-family: 'Times New Roman', serif;
+    font-family: 'Cormorant Garamond', serif;
   }
 }
 
