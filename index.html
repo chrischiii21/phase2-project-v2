@@ -179,81 +179,88 @@
       </div>
     </section>
     <!--section 4 carousel 1-->
-    <section class="w-full bg-[#0f0f0f] pt-[120px] pb-[70px] relative">
-      <div class="mx-59 px-29.75 flex flex-col items-center font-sans">
+    <section class="w-full bg-[#0f0f0f] py-16 md:py-24 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center font-sans">
 
-        <div class="relative w-[1361px] h-full max-w-350 flex items-center align-center justify-center p-0 m-0">
+        <div class="relative w-full flex items-center justify-center">
 
           <button id="prevBtn"
-            class="group absolute left-4 md:left-12 z-20 flex items-center justify-center cursor-pointer p-4 h-full focus:outline-none">
-
+            class="group absolute left-0 md:-left-12 z-20 hidden md:flex items-center justify-center cursor-pointer p-2 h-full focus:outline-none">
             <div
-              class="relative flex items-center justify-start w-10 md:w-16 h-16 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
-
+              class="relative flex items-center justify-start w-10 h-16 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
               <div
-                class="absolute left-0 w-full h-0.5 bg-white origin-left transition-transform duration-300 group-hover:rotate-40">
-
+                class="absolute left-0 w-full h-0.5 bg-white origin-left transition-transform duration-300 group-hover:rotate-[35deg]">
               </div>
               <div
-                class="absolute left-0 w-full h-0.5 bg-white origin-left transition-transform duration-300 group-hover:-rotate-40">
+                class="absolute left-0 w-full h-0.5 bg-white origin-left transition-transform duration-300 group-hover:-rotate-[35deg]">
               </div>
             </div>
           </button>
-          <div id="slider" class="mb-[50px]
-         flex items-center
-         overflow-hidden
-         gap-8
-         px-8
-         w-full
-         max-w-[1168px]
-         mx-auto
-         scroll-smooth">
-            <div class="shrink-0 w-[252px] slide-item">
+
+          <div id="slider"
+            class="flex items-center overflow-x-auto snap-x snap-mandatory no-scrollbar gap-4 md:gap-8 px-4 w-full scroll-smooth">
+
+            <div class="shrink-0 w-[70%] sm:w-[45%] md:w-[252px] snap-center slide-item">
               <img src="./src/img/slider/img-15.jpg" alt="Martini Glass"
-                class="w-63 h-auto object-fill shadow-2xl transition-all duration-500" />
+                class="w-full h-auto object-cover shadow-2xl rounded-lg transition-all duration-500" />
             </div>
-            <div class="shrink-0 w-[252px] slide-item">
+
+            <div class="shrink-0 w-[70%] sm:w-[45%] md:w-[252px] snap-center slide-item">
               <img src="./src/img/slider/andrea-riezzo-1hKZ0A182Bk-unsplash-2.jpg" alt="Purple Drinks"
-                class="w-63 h-auto object-fill shadow-2xl transition-all duration-500" />
+                class="w-full h-auto object-cover shadow-2xl rounded-lg transition-all duration-500" />
             </div>
-            <div class="shrink-0 w-[252px] slide-item">
+
+            <div class="shrink-0 w-[70%] sm:w-[45%] md:w-[252px] snap-center slide-item">
               <img src="./src/img/slider/food-photographer-david-fedulov-aI5CWpiOOZM-unsplash.jpg"
-                alt="Bartender Pouring" class="w-63 h-auto object-fill shadow-2xl transition-all duration-500" />
+                alt="Bartender Pouring"
+                class="w-full h-auto object-cover shadow-2xl rounded-lg transition-all duration-500" />
             </div>
-            <div class="shrink-0 w-[252px] slide-item">
+
+            <div class="shrink-0 w-[70%] sm:w-[45%] md:w-[252px] snap-center slide-item">
               <img src="./src/img/slider/img-12.jpg" alt="Tropical Drinks"
-                class="w-63 h-auto object-fill shadow-2xl transition-all duration-500" />
+                class="w-full h-auto object-cover shadow-2xl rounded-lg transition-all duration-500" />
             </div>
-            <div class="shrink-0 w-[252px] slide-item">
+
+            <div class="shrink-0 w-[70%] sm:w-[45%] md:w-[252px] snap-center slide-item">
               <img src="./src/img/slider/img-13.jpg" alt="Tropical Drinks"
-                class="w-63 h-auto object-fill shadow-2xl transition-all duration-500" />
+                class="w-full h-auto object-cover shadow-2xl rounded-lg transition-all duration-500" />
             </div>
-            <div class="shrink-0 w-[252px] slide-item">
+
+            <div class="shrink-0 w-[70%] sm:w-[45%] md:w-[252px] snap-center slide-item">
               <img src="./src/img/slider/img-14.jpg" alt="Tropical Drinks"
-                class="w-63 h-auto object-fill shadow-2xl transition-all duration-500" />
+                class="w-full h-auto object-cover shadow-2xl rounded-lg transition-all duration-500" />
             </div>
           </div>
+
           <button id="nextBtn"
-            class="group absolute right-4 md:right-12 z-20 flex items-center justify-center cursor-pointer p-4 h-full focus:outline-none">
+            class="group absolute right-0 md:-right-12 z-20 hidden md:flex items-center justify-center cursor-pointer p-2 h-full focus:outline-none">
             <div
-              class="relative flex items-center justify-end w-10 md:w-16 h-16 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+              class="relative flex items-center justify-end w-10 h-16 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
               <div
-                class="absolute right-0 w-full h-0.5 bg-white origin-right transition-transform duration-300 group-hover:-rotate-40">
+                class="absolute right-0 w-full h-0.5 bg-white origin-right transition-transform duration-300 group-hover:-rotate-[35deg]">
               </div>
               <div
-                class="absolute right-0 w-full h-0.5 bg-white origin-right transition-transform duration-300 group-hover:rotate-40">
+                class="absolute right-0 w-full h-0.5 bg-white origin-right transition-transform duration-300 group-hover:rotate-[35deg]">
               </div>
             </div>
           </button>
         </div>
-        <div class="flex items-center gap-3 mt-6">
-          <button onclick="goToSlide(0)" class="carousel-dot w-2.5 h-2.5 rounded-full bg-white"></button>
-          <button onclick="goToSlide(1)" class="carousel-dot w-2.5 h-2.5 rounded-full bg-neutral-600"></button>
-          <button onclick="goToSlide(2)" class="carousel-dot w-2.5 h-2.5 rounded-full bg-neutral-600"></button>
-          <button onclick="goToSlide(3)" class="carousel-dot w-2.5 h-2.5 rounded-full bg-neutral-600"></button>
-          <button onclick="goToSlide(4)" class="carousel-dot w-2.5 h-2.5 rounded-full bg-neutral-600"></button>
-          <button onclick="goToSlide(5)" class="carousel-dot w-2.5 h-2.5 rounded-full bg-neutral-600"></button>
+
+        <div class="flex items-center gap-3 mt-10">
+          <button onclick="goToSlide(0)"
+            class="carousel-dot w-2.5 h-2.5 rounded-full bg-white transition-colors"></button>
+          <button onclick="goToSlide(1)"
+            class="carousel-dot w-2.5 h-2.5 rounded-full bg-neutral-600 transition-colors"></button>
+          <button onclick="goToSlide(2)"
+            class="carousel-dot w-2.5 h-2.5 rounded-full bg-neutral-600 transition-colors"></button>
+          <button onclick="goToSlide(3)"
+            class="carousel-dot w-2.5 h-2.5 rounded-full bg-neutral-600 transition-colors"></button>
+          <button onclick="goToSlide(4)"
+            class="carousel-dot w-2.5 h-2.5 rounded-full bg-neutral-600 transition-colors"></button>
+          <button onclick="goToSlide(5)"
+            class="carousel-dot w-2.5 h-2.5 rounded-full bg-neutral-600 transition-colors"></button>
         </div>
+      </div>
     </section>
     <!--section 5 ala carte banner-->
     <section class="relative w-full h-75 md:h-100 lg:h-125 sm:h-80 overflow-hidden bg-[#0f0f0f] py-20">
