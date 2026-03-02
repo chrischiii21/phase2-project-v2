@@ -72,34 +72,6 @@
       </div>
     </nav>
   </header>
-  <script>
-    window.addEventListener('scroll', function () {
-      const header = document.getElementById('header');
-      const topBar = document.getElementById('topBar');
-      const section2 = document.getElementById('section-2');
-
-      if (topBar && section2 && header) {
-        const rect = section2.getBoundingClientRect();
-        const topBarHeight = topBar.offsetHeight;
-
-        if (rect.top <= 0) {
-          // Slide the whole header up by exactly the height of the Top Bar
-          header.style.transform = `translateY(-${topBarHeight}px)`;
-
-          // Optional: Make the Nav background solid when it hits the top
-          const nav = document.getElementById('mainNav');
-        } else {
-          // Slide it back to natural position
-          header.style.transform = 'translateY(0)';
-
-          // Optional: Return Nav to transparent state
-          const nav = document.getElementById('mainNav');
-          nav.classList.remove('bg-black/90', 'backdrop-blur-md');
-          nav.classList.add('lg:bg-transparent');
-        }
-      }
-    });
-  </script>
   <!--main content-->
   <main class="relative">
     <!--hero section-->
@@ -150,10 +122,13 @@
             by the 1960s, it will give you a cocktail experience that you'll have a
             hard time forgetting.
           </p>
-          <button
-            class="uppercase text-[12px] md:text-[13px] font-medium tracking-widest border-b border-orange-500 pb-1 hover:border-hidden transition-transform">
-            Discover More
-          </button>
+          <a href="#" class="flex flex-col items-center group/link">
+            <span
+              class="text-white text-[10px] md:text-xs lg:text-sm font-semibold tracking-[0.15em] uppercase mb-1.5 transition-colors group-hover/link:text-gray-200">
+              Discover More
+            </span>
+            <span class="w-full h-0.5 bg-[#d9661a] transition-all duration-300 group-hover/link:w-[60%]"></span>
+          </a>
         </div>
 
         <div class="col-span-1 lg:col-span-1 order-2 lg:order-3 flex justify-start overflow-hidden">
@@ -231,104 +206,15 @@
           </div>
         </button>
       </div>
-      <div class="flex items-center gap-2 lg:gap-3 mt-8">
-        <button class="w-2.5 h-2.5 rounded-full bg-white cursor-pointer focus:outline-none"></button>
-        <button
-          class="w-1.5 h-1.5 rounded-full bg-neutral-600 hover:bg-neutral-400 transition-colors focus:outline-none"></button>
-        <button
-          class="w-1.5 h-1.5 rounded-full bg-neutral-600 hover:bg-neutral-400 transition-colors focus:outline-none"></button>
-        <button
-          class="w-1.5 h-1.5 rounded-full bg-neutral-600 hover:bg-neutral-400 transition-colors focus:outline-none"></button>
+      <div class="flex items-center gap-2 md:gap-3 mt-6 lg:mt-8">
+        <button onclick="goToSlide(0)"
+          class="carousel-dot w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-white cursor-pointer focus:outline-none transition-all duration-300"></button>
+        <button onclick="goToSlide(1)"
+          class="carousel-dot w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-neutral-600 hover:bg-neutral-400 cursor-pointer focus:outline-none transition-all duration-300"></button>
+        <button onclick="goToSlide(2)"
+          class="carousel-dot w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-neutral-600 hover:bg-neutral-400 cursor-pointer focus:outline-none transition-all duration-300"></button>
       </div>
     </section>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const slider = document.getElementById('slider');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-
-        // 1. Clone items for the infinite loop illusion
-        const originalItems = Array.from(slider.querySelectorAll('.slide-item'));
-        originalItems.forEach(item => {
-          const clone = item.cloneNode(true);
-          slider.appendChild(clone);
-        });
-
-        // 2. Dynamic Scroll Calculation
-        const getScrollAmount = () => {
-          const firstItem = slider.querySelector('.slide-item');
-          // Get the computed style to find the exact gap size being used dynamically
-          const gap = parseFloat(window.getComputedStyle(slider).gap) || 0;
-          return firstItem.offsetWidth + gap;
-        };
-
-        // 3. Infinite Jump Helper
-        const handleInfiniteScroll = (direction) => {
-          const maxScroll = slider.scrollWidth / 2;
-
-          if (direction === 'next' && slider.scrollLeft >= maxScroll - 10) {
-            slider.classList.remove('scroll-smooth');
-            slider.scrollLeft = slider.scrollLeft - maxScroll;
-
-            requestAnimationFrame(() => {
-              slider.classList.add('scroll-smooth');
-              slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-            });
-            return true;
-          }
-
-          if (direction === 'prev' && slider.scrollLeft <= 0) {
-            slider.classList.remove('scroll-smooth');
-            slider.scrollLeft = maxScroll;
-
-            requestAnimationFrame(() => {
-              slider.classList.add('scroll-smooth');
-              slider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-            });
-            return true;
-          }
-
-          return false;
-        };
-
-        // 4. Click Events
-        prevBtn.addEventListener('click', () => {
-          if (!handleInfiniteScroll('prev')) {
-            slider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-          }
-        });
-
-        nextBtn.addEventListener('click', () => {
-          if (!handleInfiniteScroll('next')) {
-            slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-          }
-        });
-
-        // 5. Auto-Scroll
-        let scrollInterval;
-        const startAutoScroll = () => {
-          scrollInterval = setInterval(() => {
-            if (!handleInfiniteScroll('next')) {
-              slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-            }
-          }, 3000);
-        };
-        const stopAutoScroll = () => clearInterval(scrollInterval);
-
-        startAutoScroll();
-
-        // 6. Pause on interaction
-        slider.addEventListener('mouseenter', stopAutoScroll);
-        slider.addEventListener('mouseleave', startAutoScroll);
-        slider.addEventListener('touchstart', stopAutoScroll);
-        slider.addEventListener('touchend', startAutoScroll);
-        prevBtn.addEventListener('mouseenter', stopAutoScroll);
-        prevBtn.addEventListener('mouseleave', startAutoScroll);
-        nextBtn.addEventListener('mouseenter', stopAutoScroll);
-        nextBtn.addEventListener('mouseleave', startAutoScroll);
-      });
-    </script>
     <!--section 5 ala carte banner-->
     <section class="relative w-full h-75 md:h-100 lg:h-125 overflow-hidden">
       <img class="absolute inset-0 w-full h-full object-cover scale-130 pointer-events-none"
@@ -485,52 +371,6 @@
       </div>
 
     </section>
-    <script>
-      let currentSlide = 0;
-      const slides = document.querySelectorAll('.carousel-slide');
-      const dots = document.querySelectorAll('.carousel-dot');
-      let slideInterval;
-
-      // Function to switch slides
-      function updateCarousel(index) {
-        slides.forEach((slide, i) => {
-          if (i === index) {
-            // Fade in active slide
-            slide.classList.replace('opacity-0', 'opacity-100');
-            // Apply active styles to the corresponding dot
-            dots[i].className = 'carousel-dot w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-white cursor-pointer focus:outline-none transition-all duration-300';
-          } else {
-            // Fade out inactive slides
-            slide.classList.replace('opacity-100', 'opacity-0');
-            // Apply inactive styles to the other dots
-            dots[i].className = 'carousel-dot w-1.5 h-1.5 rounded-full bg-neutral-600 hover:bg-neutral-400 cursor-pointer focus:outline-none transition-all duration-300';
-          }
-        });
-        currentSlide = index;
-      }
-
-      // Move to the next slide
-      function nextSlide() {
-        const nextIndex = (currentSlide + 1) % slides.length;
-        updateCarousel(nextIndex);
-      }
-
-      // Allows manual clicking of the dots
-      function goToSlide(index) {
-        updateCarousel(index);
-        // Reset the timer when a user clicks a dot so it doesn't immediately skip
-        clearInterval(slideInterval);
-        startCarousel();
-      }
-
-      // Starts the auto-play timer
-      function startCarousel() {
-        slideInterval = setInterval(nextSlide, 3000); // 3000ms = 3 seconds delay
-      }
-
-      // Initialize auto-play
-      startCarousel();
-    </script>
     <!--footer-->
     <footer class="relative py-24 bg-center bg-no-repeat bg-cover"
       style="background-image: url('./src/img/footer-bg-1.jpg');">
@@ -603,7 +443,7 @@
       </div>
     </footer>
   </main>
-  <script src="./src/main.js"></script>
+
   <script type="module" src="/src/main.ts"></script>
 </body>
 
