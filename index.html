@@ -140,7 +140,7 @@
     </section>
     <!--section 3 experience-->
     <section class="relative w-full bg-[#0f0f0f] py-20 overflow-hidden">
-      <img class="absolute inset-0 w-full h-full object-cover scale-130 pointer-events-none mx-[236px] px-[119px]"
+      <img class="absolute inset-0 w-full h-full object-cover scale-130 pointer-events-none"
         src="./src/img/section-bg-3.jpg" alt="Background">
 
       <div class="absolute inset-0 bg-black/50"></div>
@@ -148,7 +148,7 @@
       <div class="relative z-10 h-full flex flex-col justify-center">
         <div class="flex flex-col items-center justify-center flex-1 text-center text-white px-4 md:px-12 lg:px-24">
 
-          <img src="./src/img/experience-text-1440x374.png" alt="Experience Text" class="w-full h-auto max-w-307.5">
+          <img src="./src/img/experience-text-1440x374.png" alt="Experience Text" class="mx-59 px-29.75">
 
         </div>
       </div>
@@ -157,7 +157,7 @@
     <section class="w-full bg-[#0f0f0f] pt-[120px] pb-[70px] relative">
       <div class="mx-59 px-29.75 flex flex-col items-center font-sans">
 
-        <div class="relative w-full max-w-350 flex items-center justify-center p-0 m-0">
+        <div class="relative w-[1361px] h-full max-w-350 flex items-center align-center justify-center p-0 m-0">
 
           <button id="prevBtn"
             class="group absolute left-4 md:left-12 z-20 flex items-center justify-center cursor-pointer p-4 h-full focus:outline-none">
@@ -174,32 +174,38 @@
               </div>
             </div>
           </button>
-          <div id="slider"
-            class="mb-[50px] flex items-center overflow-x-auto snap-x snap-mandatory gap-6 lg:gap-10 w-full h-full scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            <div class="snap-center shrink-0 w-[252px] slide-item">
+          <div id="slider" class="mb-[50px]
+         flex items-center
+         overflow-hidden
+         gap-8
+         px-8
+         w-full
+         max-w-[1168px]
+         mx-auto
+         scroll-smooth">
+            <div class="shrink-0 w-[252px] slide-item">
               <img src="./src/img/slider/img-15.jpg" alt="Martini Glass"
-                class="w-63 h-auto object-fill shadow-2xl pl-8 pr-8 transition-all duration-500" />
+                class="w-63 h-auto object-fill shadow-2xl transition-all duration-500" />
             </div>
-            <div class="snap-center shrink-0 w-[252px] slide-item">
+            <div class="shrink-0 w-[252px] slide-item">
               <img src="./src/img/slider/andrea-riezzo-1hKZ0A182Bk-unsplash-2.jpg" alt="Purple Drinks"
-                class="w-63 h-auto object-fill shadow-2xl pl-8 pr-8 transition-all duration-500" />
+                class="w-63 h-auto object-fill shadow-2xl transition-all duration-500" />
             </div>
-            <div class="snap-center shrink-0 w-[252px] slide-item">
+            <div class="shrink-0 w-[252px] slide-item">
               <img src="./src/img/slider/food-photographer-david-fedulov-aI5CWpiOOZM-unsplash.jpg"
-                alt="Bartender Pouring"
-                class="w-63 h-auto object-fill shadow-2xl pl-8 pr-8 transition-all duration-500" />
+                alt="Bartender Pouring" class="w-63 h-auto object-fill shadow-2xl transition-all duration-500" />
             </div>
-            <div class="snap-center shrink-0 w-[252px] slide-item">
+            <div class="shrink-0 w-[252px] slide-item">
               <img src="./src/img/slider/img-12.jpg" alt="Tropical Drinks"
-                class="w-63 h-auto object-fill shadow-2xl pl-8 pr-8 transition-all duration-500" />
+                class="w-63 h-auto object-fill shadow-2xl transition-all duration-500" />
             </div>
-            <div class="snap-center shrink-0 w-[252px] slide-item">
+            <div class="shrink-0 w-[252px] slide-item">
               <img src="./src/img/slider/img-13.jpg" alt="Tropical Drinks"
-                class="w-63 h-auto object-fill shadow-2xl pl-8 pr-8 transition-all duration-500" />
+                class="w-63 h-auto object-fill shadow-2xl transition-all duration-500" />
             </div>
-            <div class="snap-center shrink-0 w-[252px] slide-item">
+            <div class="shrink-0 w-[252px] slide-item">
               <img src="./src/img/slider/img-14.jpg" alt="Tropical Drinks"
-                class="w-63 h-auto object-fill shadow-2xl pl-8 pr-8 transition-all duration-500" />
+                class="w-63 h-auto object-fill shadow-2xl transition-all duration-500" />
             </div>
           </div>
           <button id="nextBtn"
@@ -215,13 +221,13 @@
             </div>
           </button>
         </div>
-        <div class="flex items-center gap-2 md:gap-3 mt-6 lg:mt-8">
-          <button onclick="goToSlide(0)"
-            class="carousel-dot w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-white cursor-pointer focus:outline-none transition-all duration-300"></button>
-          <button onclick="goToSlide(1)"
-            class="carousel-dot w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-neutral-600 hover:bg-neutral-400 cursor-pointer focus:outline-none transition-all duration-300"></button>
-          <button onclick="goToSlide(2)"
-            class="carousel-dot w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-neutral-600 hover:bg-neutral-400 cursor-pointer focus:outline-none transition-all duration-300"></button>
+        <div class="flex items-center gap-3 mt-6">
+          <button onclick="goToSlide(0)" class="carousel-dot w-2.5 h-2.5 rounded-full bg-white"></button>
+          <button onclick="goToSlide(1)" class="carousel-dot w-2.5 h-2.5 rounded-full bg-neutral-600"></button>
+          <button onclick="goToSlide(2)" class="carousel-dot w-2.5 h-2.5 rounded-full bg-neutral-600"></button>
+          <button onclick="goToSlide(3)" class="carousel-dot w-2.5 h-2.5 rounded-full bg-neutral-600"></button>
+          <button onclick="goToSlide(4)" class="carousel-dot w-2.5 h-2.5 rounded-full bg-neutral-600"></button>
+          <button onclick="goToSlide(5)" class="carousel-dot w-2.5 h-2.5 rounded-full bg-neutral-600"></button>
         </div>
     </section>
     <!--section 5 ala carte banner-->
@@ -232,7 +238,7 @@
       <div class="absolute inset-0 bg-black/50"></div>
 
       <div class="relative z-10 h-full flex flex-col justify-center">
-        <div class="flex flex-col items-center justify-center flex-1 text-center text-white px-4 md:px-12 lg:px-24">
+        <div class="flex flex-col items-center justify-center flex-1 text-center text-white mx-59 px-29.75">
           <p class="uppercase text-[12px] md:text-[13px] tracking-widest font-semibold text-white mb-4">
             Discover the Full Menu
           </p>
@@ -312,7 +318,7 @@
     <!--events and shows-->
     <section class="w-full  bg-[#0f0f0f] py-20 flex flex-col items-center justify-center mb-16 lg:mb-22.5">
 
-      <div class="w-full max-w-7xl flex flex-col items-center text-center mb-8 mx-[236px] px-[119px]">
+      <div class="w-full max-w-7xl flex flex-col items-center text-center mb-8 mx-59 px-29.75">
         <p class="uppercase text-[12px] md:text-[13px] tracking-widest font-semibold text-orange-500 mb-4">
           More at Patio Time Bar
         </p>
