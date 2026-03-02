@@ -352,29 +352,33 @@
       </div>
     </section>
     <!--events and shows-->
-    <section class="w-full  bg-[#0f0f0f] py-20 flex flex-col items-center justify-center mb-16 lg:mb-22.5">
+    <section class="w-full bg-[#0f0f0f] py-12 md:py-20 flex flex-col items-center justify-centers">
 
-      <div class="w-full max-w-7xl flex flex-col items-center text-center mb-8 mx-59 px-29.75">
-        <p class="uppercase text-[12px] md:text-[13px] tracking-widest font-semibold text-orange-500 mb-4">
+      <div class="w-full mx-auto flex flex-col items-center text-center mb-10 md:mb-16 px-4 sm:px-20 lg:px-16">
+
+        <p
+          class="uppercase text-[10px] sm:text-[12px] md:text-[13px] tracking-[0.2em] font-bold text-orange-500 mb-3 md:mb-5">
           More at Patio Time Bar
         </p>
-        <h2 class="text-4xl md:text-6xl lg:text-[98px] font-serif mb-6 leading-none font-semibold">
+        <h2
+          class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-[98px] font-serif mb-6 leading-[1.1] md:leading-[1] font-semibold text-white max-w-4xl">
           Events & Shows
         </h2>
+
         <p
-          class="text-gray-300 font-sans text-[14px] md:text-[16px] lg:text-[18px] font-medium leading-relaxed mb-8 w-full max-w-240 px-2 md:px-0">
+          class="text-white font-sans text-sm md:text-base lg:text-lg font-medium leading-relaxed max-w-2xl lg:max-w-3xl">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-          Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-          ultricies nec.
+          Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
         </p>
+
       </div>
 
-      <div class="flex items-center justify-center w-full max-w-250 gap-2 md:gap-6 lg:gap-12">
+      <div class="flex items-center justify-center w-full max-w-5xl px-4 gap-2 md:gap-8 lg:gap-12">
 
         <button id="prevBtn" onclick="prevSlide()"
           class="group z-20 flex items-center justify-center cursor-pointer p-1 md:p-2 shrink-0 focus:outline-none">
           <div
-            class="relative flex items-center justify-start w-6 md:w-10 lg:w-16 h-8 md:h-16 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+            class="relative flex items-center justify-start w-8 md:w-12 lg:w-16 h-8 md:h-12 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
             <div
               class="absolute left-0 w-full h-0.5 bg-white origin-left transition-transform duration-300 group-hover:rotate-40">
             </div>
@@ -384,7 +388,8 @@
           </div>
         </button>
 
-        <div class="relative flex items-center justify-center w-full max-w-3xl aspect-3/2 overflow-hidden">
+        <div
+          class="relative flex items-center justify-center w-full aspect-video md:aspect-[3/2] overflow-hidden rounded-sm shadow-2xl bg-neutral-900">
           <img src="./src/img/bar-events-768x512.jpg" alt="Event 1"
             class="carousel-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-100">
 
@@ -398,7 +403,7 @@
         <button id="nextBtn" onclick="nextSlideManual()"
           class="group z-20 flex items-center justify-center cursor-pointer p-1 md:p-2 shrink-0 focus:outline-none">
           <div
-            class="relative flex items-center justify-end w-6 md:w-10 lg:w-16 h-8 md:h-16 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+            class="relative flex items-center justify-end w-8 md:w-12 lg:w-16 h-8 md:h-12 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
             <div
               class="absolute right-0 w-full h-0.5 bg-white origin-right transition-transform duration-300 group-hover:-rotate-40">
             </div>
@@ -407,16 +412,15 @@
             </div>
           </div>
         </button>
-
       </div>
 
-      <div class="flex items-center gap-2 md:gap-3 mt-6 lg:mt-8">
+      <div class="flex items-center gap-4 mt-8">
         <button onclick="goToSlide(0)"
-          class="carousel-dot w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-white cursor-pointer focus:outline-none transition-all duration-300"></button>
+          class="carousel-dot w-2.5 h-2.5 rounded-full bg-white cursor-pointer transition-all duration-300"></button>
         <button onclick="goToSlide(1)"
-          class="carousel-dot w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-neutral-600 hover:bg-neutral-400 cursor-pointer focus:outline-none transition-all duration-300"></button>
+          class="carousel-dot w-2 h-2 rounded-full bg-neutral-600 hover:bg-neutral-400 cursor-pointer transition-all duration-300"></button>
         <button onclick="goToSlide(2)"
-          class="carousel-dot w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-neutral-600 hover:bg-neutral-400 cursor-pointer focus:outline-none transition-all duration-300"></button>
+          class="carousel-dot w-2 h-2 rounded-full bg-neutral-600 hover:bg-neutral-400 cursor-pointer transition-all duration-300"></button>
       </div>
 
     </section>
